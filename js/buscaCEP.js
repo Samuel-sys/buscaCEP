@@ -22,18 +22,11 @@ buscar.addEventListener('click', async () => {
 });
 
 async function fetchCEP() {
-    try {
-        
         //Realizamos uma consulta na API do viaCEP com o numero do CEP digitado
         const APIcep = await fetch(`https://viacep.com.br/ws/${CEP.value}/json/`);
         
         //retorna um arquivo json para o usuario
         return await APIcep.json();
-        
-    } catch (error) {
-        return data.erro = true;
-    }
-
 }
 
 
