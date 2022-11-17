@@ -1,25 +1,5 @@
 const CEP = document.querySelector(".CEP");
-const buscar = document.querySelector(".buscar");
 const info = document.querySelector('.info');
-
-buscar.addEventListener('click', async () => {
-    //Se o Usuario digitar mais que 8 caracteres ou menos que 8 caracteres ele não teraliza a consulta na API
-    if (CEP.value.length != 8) {
-        window.alert("O CEP tem no minimo/maximo 8 catacteres");
-        return;
-    }
-
-
-    let data = await fetchCEP();
-
-    //Verifica se o CEP e valido ou não
-    if (data.erro) {
-        limparDados();
-        setTimeout(() => window.alert("CEP não cadastrado")
-            , 100);
-    }
-    else { MostrarDados(data); }
-});
 
 async function fetchCEP() {
         //Realizamos uma consulta na API do viaCEP com o numero do CEP digitado
@@ -31,9 +11,10 @@ async function fetchCEP() {
 
 
 function MostrarDados(CEPjson) {
-
+    document.querySelector('iframe').src = `https://maps.google.com/maps?q=${CEPjson['cep']}&t=&z=19&ie=UTF8&output=embed`;
     //carrega a informações em todos os elemento HTML da pagina.
     document.querySelector('.logradouro').innerHTML = CEPjson['logradouro'];
+    document.querySelector('.cep').innerHTML = CEPjson['cep'];
     document.querySelector('.bairro').innerHTML = CEPjson['bairro'];
     document.querySelector('.complemento').innerHTML = CEPjson['complemento'];
     document.querySelector('.ddd').innerHTML = CEPjson['ddd'];

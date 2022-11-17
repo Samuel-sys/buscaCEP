@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/buscaCEP.js" defer></script>
+    <script src="./js/events.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
     <title>Buscar Endereço</title>
 </head>
+
 <body>
-    <div class="barPesquisa">
-        <input type="text" class="CEP">
-        <input type="button" value="buscar" class="buscar">
+
+    <div class="endereco">
+
+            <div class="barPesquisa">
+                <input type="text" class="CEP" minlength="8" maxlength="8">
+                <button class="buscar">Buscar</button>
+            </div>
+
+            <div class="status"></div>
+
+        <div class="info">
+            <p>Logradouro: <b class="logradouro"></b></p>
+            <p>CEP: <b class="cep"></b></p>
+            <p>Bairro: <b class="bairro"></b></p>
+            <p>Complemento: <b class="complemento"></b></p>
+            <p>DDD: <b class="ddd"></b></p>
+            <p>IBGE: <b class="ibge"></b></p>
+            <p>Localidade: <b class="localidade"></b></p>
+            <p>Siafi: <b class="siafi"></b></p>
+            <p>UF: <b class="uf"></b></p>
+        </div>
+
     </div>
 
-    <div class="info">
-        <p>Logradouro: <b class="logradouro"></b></p>
-        <p>Bairro: <b class="bairro"></b></p>
-        <p>Complemento: <b class="complemento"></b></p>
-        <p>DDD: <b class="ddd"></b></p>
-        <p>IBGE: <b class="ibge"></b></p>
-        <p>Localidade: <b class="localidade"></b></p>
-        <p>Siafi: <b class="siafi"></b></p>
-        <p>UF: <b class="uf"></b></p>
-    </div>
+    <iframe src="https://maps.google.com/maps?q=05273100&t=&z=19&ie=UTF8&output=embed">
+
+    </iframe>
+
 </body>
+
 </html>
