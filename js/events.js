@@ -1,7 +1,6 @@
 const endereco = document.querySelector('.endereco');
 const buscar = document.querySelector(".buscar");
 const stats = document.querySelector('.status');
-
 const loading = createElement('div', 'loading');
 
 buscar.addEventListener('click', async () => {
