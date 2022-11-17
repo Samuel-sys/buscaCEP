@@ -13,7 +13,7 @@ buscar.addEventListener('click', async () => {
         limparDados();
     } 
     //Se o Usuário digitar qualquer coisa que não seja numero
-    else if (isNaN(CEP.value)) {
+    else if (isNaN(CEP.value) || CEP.value.includes('.')) {
         stats.innerHTML = "Entre somente com os numeros";
         limparDados();
     }
