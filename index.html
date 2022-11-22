@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/buscaCEP.js" defer></script>
+
+    <script src="./js/elements.js" defer></script>
     <script src="./js/events.js" defer></script>
+
     <link rel="stylesheet" href="./css/style.css">
+
     <title>Buscar Endereço</title>
 </head>
 
 <body>
 
     <div class="endereco">
-        
-        <div class="barPesquisa">
-            <input type="text" class="CEP" maxlength="8">
-            <button class="buscar">Buscar</button>
-        </div>
+
+        Buscar por
+        <input type="radio" name="type" value="CEP"  onclick="renderForm()"> CEP
+        <input type="radio" name="type" value="Logradouro" checked onclick="renderForm()"> Logradouro
+
+        <form method="dialog">
+        </form>
 
         <div class="status"></div>
 
@@ -36,9 +41,13 @@
 
     </div>
 
-    <iframe src="https://maps.google.com/maps?q=05273100&t=&z=19&ie=UTF8&output=embed">
+    <div class="map mapsmall">
+        <div class="mapscreen full">
 
-    </iframe>
+        </div>
+        <iframe src="https://maps.google.com/maps?q=05273100&t=&z=19&ie=UTF8&output=embed"> </iframe>
+
+    </div>
 
 </body>
 
